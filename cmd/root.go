@@ -18,5 +18,13 @@ func Execute() error {
 		},
 	}
 
+	// add sub-commands
+	rootCmd.AddCommand(setup())
+
+	// dir, err := os.UserHomeDir()
+	// if err != nil {
+	// 	return err
+	// }
+
 	return rootCmd.ExecuteContext(context.Background())
 }
