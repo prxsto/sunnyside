@@ -3,6 +3,7 @@ package cmd
 import (
 	"context"
 
+	"github.com/elewis787/boa"
 	"github.com/spf13/cobra"
 )
 
@@ -17,6 +18,9 @@ func Execute() error {
 			return nil
 		},
 	}
+
+	rootCmd.SetUsageFunc(boa.UsageFunc)
+	rootCmd.SetHelpFunc(boa.HelpFunc)
 
 	// add sub-commands
 	rootCmd.AddCommand(setup())
